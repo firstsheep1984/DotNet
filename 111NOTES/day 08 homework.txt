@@ -1,0 +1,14 @@
+DAY 08 HOMEWORK
+
+TASK 1
+======
+
+Read Custom Dialog Windows in the tutorial:
+https://wpf-tutorial.com/dialogs/creating-a-custom-input-dialog/
+
+
+TASK 2
+======
+
+Implement task as shown on the whiteboard.
+

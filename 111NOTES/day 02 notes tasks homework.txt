@@ -1,0 +1,36 @@
+DAY 02 NOTES AND HOMEWORK
+
+
+TASK: LINQ reading / tutorial
+
+From https://www.tutorialsteacher.com/linq/linq-tutorials
+read the following sections:
+* What is LINQ
+* Why LINQ
+* LINQ API
+* LINQ Query Syntax
+* LINQ Method Syntax
+* Lambda Expression
+* Standard Query Operators
+- Where
+- OrderBy
+- ThenBy
+- GroupBy, ToLookup
+- Select
+- All, Any
+- Contains
+- Average
+- Count
+- Max
+- Sum
+- ElementAt, ElementOrDefault
+- First, FirstOrDefault
+- Last, LastOrDefault
+- Single, SingleOrDefault
+- Distinct
+- Conversion Operators
+
+TASK: Complete Day01PeopleFromFile implementation including LINQ queries therein
+
+TASK: Complete other homework tasks from Day 01
+

@@ -1,0 +1,63 @@
+QUIZ 3
+======
+
+Create new WPF DotNet Framework project Quiz3TripsWizard.
+
+Add Entity Framework to your project using NuGet.
+
+Enable database migrations in case you needed them later.
+
+Create the following 2 entities, modify access, add annotations if needed:
+
+
+class Traveller {
+	int Id;
+	string PersonName; // 1-100 characters
+	City FromCity;
+	City ToCity;
+	DateTime DepartureDate;
+	DateTime ReturnDate;
+	
+	double DistanceKm; // !!! computed property, not stored, 0 if either From or To city is null.
+}
+
+class City {
+	int Id;
+	string Name;
+	double Latitude, Longitude;
+}
+
+Note: all fields non-null unless otherwise specified.
+
+Create TripsDbContext inheriting from DbContext and define 2 DbSets like we always do.
+	
+You should have 3 WPF/XAML Windows: MainWindow, SelectFromToCity, EnterTravellerData.
+
+You must NOT use any NuGet libraries other than Entity Framework.
+
+You should create Globals class and have TripsDbContext and program name in it, and possibly other data such as selected FromCity and ToCity used to pass information from SelectFromToCity to EnterTravellerData windows.
+
+When your program starts, in the MainWindow's constructor, after DbContext is instantiated you should call method InitializeData();
+
+Method InitializeData() you should check if the table Cities is empty.
+If it is you should add at least 5 records of different cities.
+There is no way to add cities in the GUI.
+
+
+NOTE: If, when trying to add the first record to your database, you're getting an exception about "Circular references" you may need to add the following method to your TripsDbContext class:
+
+protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+    modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+	modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+}
+
+SUBMISSION
+==========
+
+1. Close VisualStudio.
+2. Copy your database files .mdf and .ldf into the directory of your Solution.
+3. ZIP-up your solution (Do NOT use RAR, 7ZIP, or other formats)
+4. Upload your ZIP to LEA as solution to Quiz 3.
+
+
+

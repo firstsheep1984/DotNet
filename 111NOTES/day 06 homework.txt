@@ -1,0 +1,34 @@
+DAY 06 HOMEWORK
+===============
+
+1. If you haven't finished reading tutorial parts assigned yesterday - finish them!
+
+Pay special attention to ListView explanations.
+
+2. Finish AllInputs project.
+
+3. Do another Temperature Converter - "day 06 hw1 tempconv.png" from 111NOTES.
+
+4. ADVANCED: Modify Notepad implementation from today
+- change it to have File->Save and File->Save as... menu items.
+- add two fields to MainWindow class:
+
+string currOpenFile;
+
+bool isModified;
+
+Use the first field to implement File->Save behaviour.
+
+Use the second field to make sure that user will never lose unsaved changes to a document. This is NOT easy.
+
+You need to track changes to document, display yes/no/cancel message boxes when user is about to lose unsaved data.
+
+Suggestion: use Window.Closing() event handler to prevent data lose on close.
+
+
+
+
+
+
+
+

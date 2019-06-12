@@ -1,0 +1,39 @@
+enum FuelType { Gasoline, ... }
+
+Array fuelList = Enum.GetValues(typeof(myEnum));
+
+foreach(FuelType val in values )
+{
+	comboFuelType.Add(val.toString());
+}
+
+
+
+for (int hour=0; hour<24; hour++) {
+	comboHours.Add($"{hour:00}:00");
+	comboHours.Add($"{hour:00}:30");
+}
+
+string OrderBy = "Name";
+
+public void RefreshPassengerList() {
+    // 1: fetch from db
+	List<Passenger> passList = Globals.Db.GetAllPassengers();
+	// 2: search term (optional)
+	string searchTerm = tbSearchTerm.Text.ToUpper();
+	if (searchTerm != "") {
+		passList = (from p in passList where p.Destination.ToUpper().Contains(searchTerm) or p.Name.ToUpper().Contains(searchTerm) select p).ToList<Passenger>();
+	}	
+	// 3: 
+	switch (OrderBy) {
+		case "Name": passList = (from p in passList order by p.Name).ToList<Passenger>(); break;
+		case "PassportNo": passList = (from p in passList order by p.PassportNo).ToList<Passenger>(); break;
+		case "Destination": passList = (from p in passList order by p.Destination).ToList<Passenger>(); break;
+		case "DepartureTimeDate": passList = (from p in passList order by p.DepartureTimeDate).ToList<Passenger>(); break;
+		default: // internal error, show dialog
+		break;
+	}
+	lvPassengers.ItemsSource = passList;
+}
+
+

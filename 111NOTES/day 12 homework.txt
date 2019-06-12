@@ -1,0 +1,22 @@
+DAY 12 HOMEWORK
+===============
+
+1. If you haven't finished reading the tutorial - finish reading it.
+
+In particular refresh sections about relations between entities.
+http://www.entityframeworktutorial.net/entity-relationships.aspx
+
+2. Also read the following sections:
+* http://www.entityframeworktutorial.net/querying-entity-graph-in-entity-framework.aspx
+* http://www.entityframeworktutorial.net/eager-loading-in-entity-framework.aspx
+* http://www.entityframeworktutorial.net/lazyloading-in-entity-framework.aspx
+* http://www.entityframeworktutorial.net/EntityFramework4.3/explicit-loading-with-dbcontext.aspx
+
+3. Create a new project Day12CarsEF which is based on Day10CarsCustDlg.
+
+Your project will have the same UI, the same functionality (CRUD) but it will use Entity Framework to access database.
+
+Make sure you can: Add, Modify (double click on the list), Delete (context menu on the list) cars using the program.
+
+
+

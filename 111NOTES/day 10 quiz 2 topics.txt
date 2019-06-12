@@ -1,0 +1,14 @@
+Quiz 2 topics list (possibly incomplete)
+
+Main topics to expect:
+* WPF Basic UI controls including grid layout, dock panel layout
+* WPF custom dialogs use, including passing data from/to dialogs
+* MS SQL Database access, including IDENTITY, foreign keys, constraints
+* LINQ use, regular expressions, Enums
+* Exception and error handling, error propagation, custom exceptions
+* Constructors, getters, setters, parsing, etc.
+* reading and writing text files
+
+* everything else we've done in this course may also be included
+* everything that you've learned in previous courses that applies to C# and WPF may also be included
+

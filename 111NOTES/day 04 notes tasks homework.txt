@@ -1,0 +1,258 @@
+DAY 04 NOTES, TASKS, HOMEWORK
+#############################
+
+
+MAIN ITEMS FOR THE QUIZ
+=======================
+* Reading and writing text files with exception handling
+* Parsing numbers, other data, with exception and parsing failure handling
+* Delegates creation and use
+* LINQ use for sorting and extracting data from collections of objects
+* Enums
+* Indexer
+* Generics
+
+* Text user input and output - Console
+* Task decomposition into classes and methods
+* Nullable types
+* Custom Exceptions creation and use
+
+* Getters and setters with verification and exception throwing, constructors
+* Inheritance and polymorphism
+* Casting, as, is, typeof...
+* Access modifiers
+
+
+
+
+
+TASK 1 - Indexer exercise
+-------------------------
+
+Create new console program Day04IndexPlay.
+
+In it create new class String10Storage with indexer getter/setts that accepts integer as index value and returns / takes string.
+
+Implement that class as a storage for 10 string values.
+
+Internally store strings in this array:
+
+private string [] data = new string[10];
+
+Write code to test your indexer by putting 5 strings of data into it then printing out all 10 positions of the indexer storage in a for loop.
+
+LATER:
+
+Create a new class similar to String10Storage called TenStorage that is a generic class that can store any type.
+
+
+TASK 2 - indexer again
+----------------------
+
+In the same program create class PrimeArray with indexer method.
+
+The indexer method will only have a getter taking an integer as index value and returning a boolean.
+
+The value returned will signify whether the index value is a prime number or not.
+
+PA[1] returns true
+PA[4] return false
+PA[5] returns true
+PA[6] returns false
+
+If index value is 0 or less throw an exception of your choice.
+
+WHEN DONE - MAKE THE FOLLOWING MODIFICATION.
+
+Make the indexer return a long value instead. The value returned for index N is the Nth prime number.
+
+PA[1] returns 1
+PA[2] returns 2
+PA[3] returns 3
+PA[4] returns 5
+PA[5] returns 7a
+PA[6] returns 11
+PA[7] returns 13
+...
+
+TASK 3: - Add Delegates
+-----------------------
+
+Continue working with the previous solution/project.
+
+In PrimeArray class define a delegate type named LoggerDelegateType. That type will take three parameters types int, long and string and return void. 
+
+In PrimeArray class define a field of delegate type named Logger type LoggerDelegateType. Make this field public.
+
+In PrimeArray the delegate Logger must be called (only if not null) every time you need to compute a new prime. In that case first parameter is the N (index), second prime number returned and other message "computed new number".
+
+In your main class define two static methods:
+
+static void DisplayMessage(int n, long prime, string msg) { ... }
+static void SaveMessage(int n, long prime, string msg) { ... }
+
+The first one will display n, prime, message on the screen in a single line.
+
+The second one will write the same information to a file named @"..\..\records.txt" prefixed with a timestamp yyyy-mm-dd hh:mm:ss. Make sure you use a valid date format for DotNet.
+
+
+In your Main method you will randomly (in 50% of cases) add DisplayMessage to PrimeArray's delegate field.
+
+In your Main method you will randomly (in 50% of cases) add SaveMessage to PrimeArray's delegate field.
+
+After that you will ask PrimeArray instance for a few fibonacci numbers and make sure logging works.
+
+
+TASK 4 - LINQ
+-------------
+
+Create a new project Day04LoggerAnalyzer. It will use "messages.txt" file from the previous task.
+
+Define an new class LogMsg as follows.
+
+class LogMsg {
+	DateTime Date;
+	int N;
+	long Prime;
+	string Msg;
+}
+
+In you Main class define:
+
+static List<LogMsg> LogList = new List<LogMsg>();
+
+And a method
+
+static void ReadLogsFromFile() { }
+
+That method will read records.txt file (created by the previous tasks), parse every line, instantiate LogMsg objects and add them to logList.
+
+You will then use LINQ queries to find out and print out the following:
+
+A) All log messages for prime vales below 100, ordered by date.
+
+B) All log messages ordered by number of seconds (and seconds only) when they were recorded.
+
+
+
+TASK 5
+======
+
+Create console project Day04JustNumbers.
+In a loop ask user for a positive integer number.
+Keep asking until user enters 0 or less.
+
+Suggestion: use TryParse() if you can, otherwise Parse, which throws exception.
+Save each number in List<>.
+
+static List<int> intList = new List<int>();
+
+After all numbers are saved compute (using LINQ whenever possible) and display:
+- the average of all numbers (floating point)
+- the maximum of all numbers
+- median (you probably need to sort numbers first)
+- standard deviation
+
+Save the list of numbers to "output.txt" file, on a single line, semincolon-separated
+
+
+TASK 6
+======
+Create console project Day04StudentsGrades.
+In the main directory of your project create file "grades.txt" with content similar to:
+
+Jerry:A-,B+,C,F
+Tom:B-
+Maria:B+,A+,D+
+Eva:A-,B-,B+
+
+Read the file @"..\..\grades.txt" and store data in List<Student> and for every student display their name and their GPA on a separate line.
+
+It is part of your task to figure out what the best definition of class Student needs to be to make the task possible.
+
+
+To convert letter grade to a number grade use a static method with the following signature:
+static double LetterToNumberGrade(string strGrade) {}
+
+Convert according to http://www.rapidtables.com/calc/grade/gpa-to-letter-grade-calculator.htm
+
+Example output:
+
+Mimi has GPA 3.7
+Melinda has GPA 4.1
+Larry has GPA 2.9
+
+
+TASK 7
+======
+
+Create a project 'Day04BankingRecords'.
+
+You will read account transactions from a file, instantiate objects and store them in a List, then you will analyze them.
+
+In Program class you will add:
+
+static List<AccountTransaction> transactionList = new List<AccountTransaction>();
+
+This is the initial class you will use to store information about each transaction.
+
+public class AccountTransaction {
+	public AccountTransaction(string line) { ... }
+
+	DateTime Date;
+	string Description;
+	decimal Deposit;
+	decimal Withdrawal;
+}
+
+Your input text file is 'operations.txt' with the example contents:
+
+2015-01-03 15:05:34;Initial deposit;1000;0
+2015-01-05 15:05:34;Groceries;0;245
+2015-01-12 15:05:34;Home improvement;0;355
+2015-01-17 15:05:34;Paycheck;1234;0
+2015-01-28 15:05:34;Rent;0;975
+
+WHAT YOU NEED TO DO:
+
+* AccountTransaction
+- Add getters to all fields.
+- There are NO SETTERS.
+- Implement the constructor that will take 1 parameter - string line from input file.
+It will then split() the string by ";" character and will make sure that:
+ . date looks like a valid date
+ . description is at least 2 characters long
+ . deposit and withdrawal are non-negative values
+ . either deposit or withdrawal must be 0 (you can't deposit and withdraw in the same one operation).
+Constructor throws custom exception InvalidDataException if a problem is encountered.
+ 
+* Main()
+- Open text file 'operations.txt' for reading.
+- Read it line by line, pass each line to the constructor of AccountTransaction, then add each new object to transactionList.
+- make sure you try/catch both file I/O exceptions as well as exceptions that may be caused by malformed data in the file
+- find the final balance of the account and display it (sum of all deposits minus sum of all withdrawals) using LINQ
+
+
+TASK 8
+======
+
+Create console project Day04TeamMembers
+In the main directory of your project create input file with content similar to:
+
+Green Grass Team:Jerry,Marry,Barry
+Terrific Team Today:Marry,Melinda,Eva,Jerry
+Other Best Team:Eva,Jerry,Barry
+Second to none Team:Melinda,Eva,Marry
+Yet Another Super-Team:Eva,Jerry,Barry,Marry
+
+After reading in the data from the file you will need to find out which player plays in which team and display the answer on the screen.
+
+Example output:
+Jerry plays in: Green Grass Team, Terrific Team Today, Other Best Team, Yet Another Super-Team
+Marry plays in: Green Grass Team, Terrific Team Today, Yet Another Super-Team
+Barry plays in: ... (and so on)
+
+Hint: You need to design a data structure that will help you answer the question with minimum effort. Suggested data structure: Dictionary or HashSet (similar to HashMap from Java). You may also use List or specialized class, but Dictionary will make the answer easiest to provide.
+
+
+

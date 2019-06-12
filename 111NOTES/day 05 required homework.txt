@@ -1,0 +1,68 @@
+REQUIRED HOMEWORK - TUTORIAL READING
+====================================
+
+As your preparation for the next class you are REQUIRED to read the following sections of the tutorial from https://wpf-tutorial.com/ :
+
+* About WPF
+- What is WPF
+- WPF vs. WinForms
+
+* XAML
+- What is XAML
+- Basic XAML
+- Events in XAML
+
+* WPF Application
+- A WPF Application - Introduction
+- The Window
+- Working with App.xaml
+- Command-line parameters in WPF
+- Resources
+- Handling exceptions in WPF
+- Application Culture / UICulture
+
+* Basic controls
+- The TextBlock control
+- The TextBlock control - Inline formatting
+- The Label control
+- The TextBox control
+- The Button control
+- The CheckBox control
+- The RadioButton control
+- The PasswordBox control
+- The Image control
+
+* Panels
+- Introduction to WPF panels
+- The Canvas control
+- The WrapPanel control
+- The StackPanel control
+- The DockPanel control
+
+* List controls
+- The ItemsControl
+- The ListBox control
+- The ComboBox control
+- The Grid Control
+- The Grid - Rows & columns
+- The Grid - Units
+- The Grid - Spanning
+- The GridSplitter
+- Using the Grid: A contact form
+
+* The ListView control
+- Introduction to the ListView control
+- A simple ListView example
+- ListView, data binding and ItemTemplate
+- ListView with a GridView
+
+* Dialogs
+- The MessageBox
+- The OpenFileDialog
+- The SaveFileDialog
+
+* Common interface controls
+- The WPF Menu control
+- The WPF ContextMenu
+- The WPF StatusBar control
+

@@ -1,0 +1,34 @@
+DAY 07 HOMEWORK
+
+TASK 1
+======
+
+Look at "day 07 hw1.jpg" file.
+
+Additional explanations:
+
+Under almost every TextBox place a red-text label with error associated with invalid input.
+
+Define Is***Valid() static methods in class Trip for verification purpose both in UI and setters for every field/property.
+
+Add ToString() to class Trip.
+
+On program startup use LoadDataFromFile() and when main window closes implement SaveDataToFile() to ensure data is persistently stored between program executions in @"..\..\trips.txt" file.
+
+Button SaveSelected will export only the selected records and save them to a file selected using SaveFileDialog.
+
+
+TASK 2
+======
+
+Connecting C# program to MS SQL Database - read this tutorial:
+
+https://www.codeproject.com/Articles/823854/How-to-connect-SQL-Database-to-your-Csharp-program
+
+
+TASK 3
+======
+
+Read about GridView in WPF Tutorial
+
+

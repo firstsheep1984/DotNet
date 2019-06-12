@@ -1,0 +1,61 @@
+HOMEWORK
+========
+
+EF - Trains and Passengers
+---------------------------------
+
+Create WPF (GUI) project Day13TravelsEF.
+
+Add Entity Framework via NuGet. 
+
+Create DbContext class named TravelDbContext.
+
+Create two entities and enumeration as follows:
+
+class Passenger {
+	int Id;
+	string Name; // 1-50 characters
+	Gender Gender;
+	Train Train; // may be null
+	
+	[NotMapped] // you may not need this computed property
+	TrainDesc {
+		get { // handle when train is Null
+			return $"{Train.Number} on {Train.Date}"
+		}
+	}
+}
+
+enum Gender { Male = 1, Female = 2, NA = 3 };
+
+class Train {
+	int Id;
+	int Number; // train number e.g. 678 range 1-999
+	DateTime Date; // date only, time is irrelevant
+	ICollection<Passenger> PassengersCollection;
+	
+	[NotMapped] // you may not need this computed property
+	PassengerNamesStr {
+		get { // handle when train is Null
+			return string.Join(", ", PassengersCollection);			
+		}
+	}
+}
+
+Enable database migrations.
+
+Your main task is to DESIGN AND IMPLEMENT a GUI application that will allow for the following operations:
+* View list of trains
+* For a specific train view a list of all passengers that travel on it
+* Add a train
+* View list of passengers with trains they travel on
+* Add a passenger
+* Assign passenger to travel on a train (or remove passenger from that train)
+* Delete train and all passengers that are traveling on that train.
+
+NOTE: this is NOT a console application but a WPF/GUI application.
+
+You will use Entity Framework to implement data storage for this application.
+
+NOTE: If you can't figure out how to design and implement a WPF GUI for such an application then implement the project as a Console DotNet Framework application with a menu like we did in class previously.
+
