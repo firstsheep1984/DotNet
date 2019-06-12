@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day07IceCreamSelector", "Day07IceCreamSelector\Day07IceCreamSelector.csproj", "{EAF9C56B-916B-43D1-890A-C45E9C712D4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAF9C56B-916B-43D1-890A-C45E9C712D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF9C56B-916B-43D1-890A-C45E9C712D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF9C56B-916B-43D1-890A-C45E9C712D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF9C56B-916B-43D1-890A-C45E9C712D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E919769B-901F-474F-9601-ABA3B1AC1CB0}
+	EndGlobalSection
+EndGlobal

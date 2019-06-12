@@ -1,0 +1,34 @@
+﻿<Window x:Class="Day10CarsCustDlg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day10CarsCustDlg"
+        mc:Ignorable="d" MinHeight="150" MinWidth="300" 
+        Title="MainWindow" Height="230" Width="520">
+    <DockPanel >
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="Export to CSV ..."/>
+                <Separator />
+                <MenuItem Header="_Exit"/>
+            </MenuItem>
+            <MenuItem Click="AddCar_MenuClick" Header="_Add"/>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Name="lblCursorPosition" />
+            </StatusBarItem>
+        </StatusBar>
+        <ListView Name="lvCars">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="#" Width="40" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Make and model" Width="260" DisplayMemberBinding="{Binding MakeModel}" />
+                    <GridViewColumn Header="Engine" Width="100" DisplayMemberBinding="{Binding EngineSizeL, StringFormat={}{0:0.0}L }" />
+                    <GridViewColumn Header="Fuel" Width="100" DisplayMemberBinding="{Binding FuelType}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</Window>

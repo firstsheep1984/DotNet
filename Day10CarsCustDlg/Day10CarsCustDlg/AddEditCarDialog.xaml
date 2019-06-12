@@ -1,0 +1,30 @@
+﻿<Window x:Class="Day10CarsCustDlg.AddEditCarDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day10CarsCustDlg"
+        mc:Ignorable="d" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+        Title="AddEditCarDialog" Height="217.149" Width="344.84">
+    <Grid>
+        <Label Content="Id:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.105,-0.231" Width="120"/>
+        <Label Content="Make and model:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.105,-0.231" Width="120"/>
+        <Label Content="Engine size:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.105,-0.231" Width="80"/>
+        <Label Content="{Binding ElementName=sliderEngineSize, Path=Value, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="{}{0:0.0L}" HorizontalAlignment="Left" Margin="90,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.263,-0.115" Width="40"/>
+        <Label Content="Fuel type:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.105,-0.231" Width="120"/>
+        <Label Name="lblId" Content="-" HorizontalAlignment="Left" Margin="130,10,0,0" VerticalAlignment="Top" Width="188"/>
+        <TextBox Name="tbMakeModel" HorizontalAlignment="Left" Height="23" Margin="135,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="183"/>
+        <Slider Name="sliderEngineSize" HorizontalAlignment="Left" Margin="135,72,0,0" VerticalAlignment="Top" Width="183" TickFrequency="0.1" />
+        <ComboBox Name="comboFuelType" HorizontalAlignment="Left" Margin="135,103,0,0" VerticalAlignment="Top" Width="183">
+            <ComboBoxItem IsSelected="True">Gasoline</ComboBoxItem>
+            <ComboBoxItem>Diesel</ComboBoxItem>
+            <ComboBoxItem>Hybrid</ComboBoxItem>
+            <ComboBoxItem>Eleclric</ComboBoxItem>
+            <ComboBoxItem>Propane</ComboBoxItem>
+            <ComboBoxItem>Alcohol</ComboBoxItem>
+        </ComboBox>
+        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" Margin="68,145,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.16,-0.4"/>
+        <Button Click="BtSave_Click" Name="btSave" IsDefault="True" Content="Save" HorizontalAlignment="Left" Margin="217,145,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.16,-0.4"/>
+
+    </Grid>
+</Window>
