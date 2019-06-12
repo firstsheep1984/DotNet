@@ -1,0 +1,6 @@
+﻿* Install EntityFramework into the solution using NuGet
+* Create class CompanionDBContext, add inheritance, add DbSet<Friend>
+* Enable migrations just in case you needed them later
+* add CompanionDBContext ctx; in the MainWindow code behind
+* open database connnection (instantiate CompanionDbContext) after InitializeComponent is called, then fetch all records and givem to ListView to display
+* Implement Add functionality

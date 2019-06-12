@@ -1,0 +1,35 @@
+﻿<Window x:Class="Day15TravelsEF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day15TravelsEF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="308.287" Width="560.083">
+    <TabControl>
+        <TabItem Header="Trains">
+            <Grid Background="#FFE5E5E5">
+                <ListView HorizontalAlignment="Left" Height="249" VerticalAlignment="Top" Width="431">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Content="Add train" HorizontalAlignment="Left" Margin="447,22,0,0" VerticalAlignment="Top" Width="89" Height="30"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Passengers">
+            <Grid Background="#FFE5E5E5">
+                <ListView Margin="0,0,117,0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Content="Add passenger" HorizontalAlignment="Left" Margin="434,10,0,0" VerticalAlignment="Top" Width="102"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
